@@ -6,16 +6,17 @@ Terraform Module to set up NewRelic AWS Metric Streams.
 ## Requirements
 
 | Name | Version |
-|------|--------|
+|------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.0 |
 | <a name="requirement_aws"></a> [aws](#requirement\_aws) | >= 5.0 |
+| <a name="requirement_newrelic"></a> [newrelic](#requirement\_newrelic) | >= 2.40 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
 | <a name="provider_aws"></a> [aws](#provider\_aws) | >= 5.0 |
-| <a name="provider_newrelic"></a> [newrelic](#provider\_newrelic) | n/a |
+| <a name="provider_newrelic"></a> [newrelic](#provider\_newrelic) | >= 2.40 |
 
 ## Modules
 
