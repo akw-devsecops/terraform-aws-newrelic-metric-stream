@@ -2,12 +2,6 @@ resource "aws_kinesis_firehose_delivery_stream" "newrelic_stream" {
   name        = "TF-NewRelic-Delivery-Stream"
   destination = "http_endpoint"
 
-  s3_configuration {
-    bucket_arn         = aws_s3_bucket.newrelic_firehose_events.arn
-    role_arn           = aws_iam_role.newrelic_firehose_s3access.arn
-    compression_format = "GZIP"
-  }
-
   http_endpoint_configuration {
     name               = "New Relic"
     url                = "https://aws-api.newrelic.com/cloudwatch-metrics/v1"
@@ -20,6 +14,12 @@ resource "aws_kinesis_firehose_delivery_stream" "newrelic_stream" {
 
     request_configuration {
       content_encoding = "GZIP"
+    }
+
+    s3_configuration {
+      bucket_arn         = aws_s3_bucket.newrelic_firehose_events.arn
+      role_arn           = aws_iam_role.newrelic_firehose_s3access.arn
+      compression_format = "GZIP"
     }
   }
 
