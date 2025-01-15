@@ -17,7 +17,6 @@ variable "include_resource" {
 variable "aws_account" {
   type        = string
   description = "The account name from the aws account shown in NewRelic."
-  default     = null
 }
 
 variable "tags" {
